@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
         validatedBy = {UniqueUsernameValidator.class}
 )
 public @interface UniqueUsername {
-    String message() default "Username must be unique";
+    String message() default "{keepintouch.constraint.username.UniqueUsername.message}";
 
     Class<?>[] groups() default {};
 

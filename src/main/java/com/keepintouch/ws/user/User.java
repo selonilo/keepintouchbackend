@@ -15,7 +15,7 @@ public class User {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @NotNull
+    @NotNull(message = "{keepintouch.constraint.username.NotNull.message}")
     @UniqueUsername
     @Size(min = 4, max = 255)
     private String username;
@@ -26,7 +26,7 @@ public class User {
 
     @NotNull
     @Size(min = 8,max = 255)
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$",message = "{keepintouch.constraint.password.Pattern.message}")
     private String password;
 
     public Long getId() {
